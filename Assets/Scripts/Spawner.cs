@@ -29,6 +29,7 @@ public class Spawner : MonoBehaviour
             Vector2 spawnPos = Random.insideUnitCircle * 4;
             Instantiate(duckPreFab, spawnPos, transform.rotation);
             ducks.Add(duckPreFab);
+            
         }
     }
 }
