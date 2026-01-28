@@ -478,6 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 595732287}
   - component: {fileID: 595732286}
+  - component: {fileID: 595732288}
   m_Layer: 0
   m_Name: DuckSpawner
   m_TagString: Untagged
@@ -498,6 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duckPreFab: {fileID: 5399572268510036345, guid: e9c55d76ffbaa7141bd63b8851932134, type: 3}
+  ducks: []
 --- !u!4 &595732287
 Transform:
   m_ObjectHideFlags: 0
@@ -513,6 +515,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &595732288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595732285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0538af0f95f8d74b92c5e0398a42486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &597803849
 GameObject:
   m_ObjectHideFlags: 0
