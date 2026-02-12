@@ -243,6 +243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 223146244}
+  - component: {fileID: 223146245}
   m_Layer: 0
   m_Name: GhostSpawner
   m_TagString: Untagged
@@ -265,6 +266,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &223146245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223146243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50f2e4fd4c3c0e8439e0f93ef463d6dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerMax: 5
+  timerValue: 0
+  prefab: {fileID: 101424194788182026, guid: 8f286feaef81e1147b5ab28b0d9072c2, type: 3}
 --- !u!1 &254325791
 GameObject:
   m_ObjectHideFlags: 0
