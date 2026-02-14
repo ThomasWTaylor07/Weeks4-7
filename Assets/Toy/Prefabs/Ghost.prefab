@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthbar: {fileID: 2947878240360607282}
   ghost: {fileID: 4324721113182854114}
-  health: 10
+  health: 8
 --- !u!1 &183740993483842022
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class GhostHealth : MonoBehaviour
     public Slider healthbar;
     public SpriteRenderer ghost;
     public float health = 50;
+    public bool noHealth;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +24,14 @@ public class GhostHealth : MonoBehaviour
         {
             health -= 0.01f;
             healthbar.value = health;
+        }
+        if (health <= 0)
+        {
+            noHealth = true;
+        }
+        else
+        {
+            noHealth = false;
         }
     }
 }

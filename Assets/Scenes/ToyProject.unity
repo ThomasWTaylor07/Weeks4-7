@@ -280,7 +280,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerMax: 5
   timerValue: 0
-  prefab: {fileID: 101424194788182026, guid: 8f286feaef81e1147b5ab28b0d9072c2, type: 3}
+  ghealth: {fileID: 1749647285545007765, guid: 8f286feaef81e1147b5ab28b0d9072c2, type: 3}
+  ghosts: []
+  ghost: {fileID: 101424194788182026, guid: 8f286feaef81e1147b5ab28b0d9072c2, type: 3}
+  spawnedGhosts: {fileID: 0}
+  howManyGhosts: 0
 --- !u!1 &254325791
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,7 +921,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -8105972918829521130, guid: 2768dd9eb674fe84693956ce3a6b8983, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
