@@ -11,13 +11,17 @@ public class GhostHealth : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      healthbar.maxValue = health;
+        healthbar.maxValue = health;
         healthbar.value = health;
+        Vector3 newRotate = transform.eulerAngles;
+        newRotate.z = Random.Range(1,360);
+        transform.eulerAngles = newRotate;
     }
 
     // Update is called once per frame
     void Update()
     {
+      
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         if (ghost.bounds.Contains(mousePos))
@@ -35,3 +39,4 @@ public class GhostHealth : MonoBehaviour
         }
     }
 }
+
