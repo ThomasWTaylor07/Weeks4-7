@@ -17,6 +17,9 @@ public class GhostSpawner : MonoBehaviour
     public SpriteRenderer sr;
     public int howManyGhosts;
     public TextMeshProUGUI score;
+    public AudioSource audioSource;
+    public AudioClip spawn;
+    public AudioClip despawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,6 +39,8 @@ public class GhostSpawner : MonoBehaviour
             GhostHealth ghealth = spawnedGhosts.GetComponent<GhostHealth>();
             timerValue = 0;
             ghosts.Add(spawnedGhosts);
+            audioSource.clip = spawn;
+            audioSource.Play();
 
         }
         for (int i = ghosts.Count - 1; i >= 0; i--)
@@ -47,6 +52,8 @@ public class GhostSpawner : MonoBehaviour
                 ghosts.Remove(ghost);
                 Destroy(ghost);
                 howManyGhosts += 1;
+                audioSource.clip = despawn;
+                audioSource.Play();
             }
         }
     }
