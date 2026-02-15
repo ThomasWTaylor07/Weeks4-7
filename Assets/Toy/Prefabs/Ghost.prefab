@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.14909041, g: 0.207778, b: 0.13128659, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -104,6 +104,7 @@ MonoBehaviour:
   healthbar: {fileID: 2947878240360607282}
   ghost: {fileID: 4324721113182854114}
   health: 8
+  noHealth: 0
 --- !u!1 &183740993483842022
 GameObject:
   m_ObjectHideFlags: 0

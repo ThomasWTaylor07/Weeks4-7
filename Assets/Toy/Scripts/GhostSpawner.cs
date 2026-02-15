@@ -1,5 +1,8 @@
+using JetBrains.Annotations;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Xml.Serialization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,7 +14,9 @@ public class GhostSpawner : MonoBehaviour
     public List<GameObject> ghosts;
     public GameObject ghost;
     public GameObject spawnedGhosts;
+    public SpriteRenderer sr;
     public int howManyGhosts;
+    public TextMeshProUGUI score;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +26,7 @@ public class GhostSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        score.text = howManyGhosts.ToString();
         timerValue += Time.deltaTime;
         if (timerValue > timerMax)
         {
@@ -40,7 +46,22 @@ public class GhostSpawner : MonoBehaviour
                 GameObject ghost = ghosts[i];
                 ghosts.Remove(ghost);
                 Destroy(ghost);
+                howManyGhosts += 1;
             }
         }
     }
+    public void colourChange()
+    {
+        for (int ii = ghosts.Count - 1; ii >= 0; ii--)
+        {
+            SpriteRenderer sr = ghosts[ii].GetComponent<SpriteRenderer>();
+            sr.color = Random.ColorHSV();
+        }
+    }
 }
+
+
+  
+        
+   
+

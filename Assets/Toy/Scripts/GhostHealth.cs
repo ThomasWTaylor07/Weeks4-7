@@ -21,7 +21,7 @@ public class GhostHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
 
         if (ghost.bounds.Contains(mousePos))
@@ -37,6 +37,12 @@ public class GhostHealth : MonoBehaviour
         {
             noHealth = false;
         }
+        
     }
-}
+        public void changeColour()
+        {
+            ghost.color = Random.ColorHSV();
+        }
+    }
+
 
