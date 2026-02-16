@@ -15,6 +15,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
         Vector2 newPos = transform.position;
         newPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
         transform.position = newPos;
+
+       Mathf.Clamp(newPos.y, -0.7f, 0.7f);
+        Mathf.Clamp(newPos.x, -12, 12);
     }
 
    public void LightScale(float scale)
