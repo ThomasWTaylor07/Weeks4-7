@@ -101,16 +101,19 @@ public class GhostSpawner : MonoBehaviour
         //Checks for each ghost in the list so that every ghost in the scene can get their colour changed
         for (int ii = ghosts.Count - 1; ii >= 0; ii--)
         {
-            //Gives the script access to each ghosts sprite render so its colour can be changed when a button is pressed
+            //Gives the script access to each ghost's sprite render so its colour can be changed when a button is pressed
             SpriteRenderer sr = ghosts[ii].GetComponent<SpriteRenderer>();
-            //Changes the colur value within each ghosts sprite renderer to a random value to change the colour of each ghost
+            //Changes the colur value within each ghost's sprite renderer to a random value to change the colour of each ghost
             sr.color = Random.ColorHSV();
         }
     }
 }
+//Audio Credits
+//Despawn and ambience sounds: https://sounds.spriters-resource.com/pc_computer/fivenightsatfreddys2/asset/398088/ uploaded by IndigoPupper
+//Spawning sound: https://pixabay.com/sound-effects/horror-ghost-horror-sound-382709/ uploaded by Dragon Studio
 
 
-  
-        
-   
+
+
+
 

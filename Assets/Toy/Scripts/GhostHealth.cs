@@ -57,5 +57,8 @@ public class GhostHealth : MonoBehaviour
     }
     
     }
+//Image Credits:
+//Ghost: https://www.baamboozle.com/game/1213919 uploaded by Baamboozle 
+//Background:https://www.freepik.com/free-vector/old-abandoned-house-hallway-night_7588760.htm#fromView=keyword&page=1&position=0&uuid=41481d7d-640a-450e-8b74-5ddea63245cb&query=Creepy+basement uploaded by upklyak
 
 
