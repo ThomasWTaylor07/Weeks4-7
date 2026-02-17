@@ -12,7 +12,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //Initializes and assigns a new Vector2 that can that can change the value of the game objects transform
+       //Initializes and assigns a new Vector2 that can that can be used to change the value of the game objects transform
         Vector2 newPos = transform.position;
         //Converts the mouses position on screen to a Vector2 so the mouse can move the game object
         newPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
@@ -20,7 +20,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         transform.position = newPos;
     }
 
-    //Initializes a new function that features a float as an argument that can then be accesed and changed by the slider
+  //Initializes a new function that features a float as an argument that gets accesed and changed by a slider in the UI
    public void LightScale(float scale)
     {
    //Sets the objects scale to 1 multiplied by the sliders value, allowing for the game object to change its scale based on the slider

@@ -9,17 +9,17 @@ using UnityEngine.UI;
 
 public class GhostSpawner : MonoBehaviour
 {
-    //Intializes a variable that sets the max time it takes for a prefab to be instantiated and a timer to be reset
+    //Intializes a variable that sets the max time it takes for a prefab to be instantiated and for the timer to be reset
     public float timerMax = 5;
-    //Initializes a varibale that acts as the starting value of a timer that gets increased by time.DeltaTime
+    //Initializes a varibale that acts as the starting value of the timer that then gets increased by time.DeltaTime
     public float timerValue = 0;
-    //Gives the Ghost Spawner script and each prefab the ability to use the ghost health script if put into the inspector 
+    //Gives the Ghost Spawner script access to the Ghost Health script allowing each prefab to access it from the inspector 
     public GhostHealth ghealth;
-    //Creates a list of each ghost prefab in the scene so that ghosts can be destroyed and changed by code within the script
+    //Creates a list of each ghost prefab in the scene so that ghosts can be destroyed and changed from within the script
     public List<GameObject> ghosts;
     //Allows the script to get access to the ghost prefab as long as it is placed in the inspector so it can be instantiated
     public GameObject ghost;
-    //Turns each ghost that is instatiated into a game object that can then be added to the list
+    //Turns each ghost that is instatiated into a game object that can then be added to a list of instatiated game objects
     public GameObject spawnedGhosts;
     //Creates a public sprite rended varible that is used to get the sprite renderer of the ghost prefab from the inspector
     public SpriteRenderer sr;
@@ -33,12 +33,12 @@ public class GhostSpawner : MonoBehaviour
     public AudioClip spawn;
     //Gets an audio clip that's set in the inspector so it can be played by the audio source whenever a ghost is destroyed
     public AudioClip despawn;
-    //Gets a slider component from the UI into the script that will be used to show the time until the next ghost is instantiated
+    //Gets access to a slider component from the UI that will create a timer to show the time until the next ghost is instantiated
     public Slider timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //Sets the sliders maximum to the value of the timerMax variable so that it resets at the same time as the timerValue variable
+        //Sets the timers maximum value to the timerMaxs value so that it resets at the same time as the timerValue variable
         timer.maxValue = timerMax;
 
     }
@@ -50,14 +50,14 @@ public class GhostSpawner : MonoBehaviour
         score.text = howManyGhosts.ToString();
         //Increments the value of a timer by delta time so that it can count up unitil it reach the time limit
         timerValue += Time.deltaTime;
-        //Checks if the value of the timer has exceeded the maximum value on the timer so that something can happen every 5 seconds
+        //Checks if the value of the timer has exceeded the maximum value its allowed so that something can happen every 5 seconds
         if (timerValue > timerMax)
         {
   //A vector2 is given random values that are used as the ghosts transform so that the ghosts are instantiated at a random spot
             Vector2 spawnPos = Random.insideUnitCircle * 4;
             //Instatiates a ghost prefab at a random position and turns it into a game object that gets added to a list 
             spawnedGhosts = Instantiate(ghost, spawnPos, Quaternion.identity);
-            //Gives each instansiated ghost access to the ghost health script so they can have the same health functionallity
+            //Gives each instansiated ghost access to the Ghost Health script so they can have the same health functionallity
             GhostHealth ghealth = spawnedGhosts.GetComponent<GhostHealth>();
             //Sets the timer back to 0 so it can count the time unitil another 5 seconds have passed
             timerValue = 0;
@@ -69,14 +69,14 @@ public class GhostSpawner : MonoBehaviour
             audioSource.Play();
 
         }
-        //Updates the value of the timer slider in the UI so that it accuratley shows the value of the timerValue variable 
+        //Updates the value of the timer in the UI so that it accuratley shows the value of the timerValue variable each frame
         timer.value = timerValue;
         //Grabs every ghost within the list so that it can check whether any of them have no health left
         for (int i = ghosts.Count - 1; i >= 0; i--)
         {
-            //Gives each ghost access to its ghost health script so that the code can check when an object has no health
+            //Gets each ghosts Ghost Health script so that the code can check whether an object has no health
             GhostHealth gihealth = ghosts[i].GetComponent<GhostHealth>();
-       //Checks if the noHealth value in any of the ghosts ghost health script is equal to true to see whether it has no health 
+       //Checks if the noHealth boolean in any of the ghosts Ghost Health script is equal to true to see whether it has no health 
             if (gihealth.noHealth == true)
             {
                 //Gets the specific ghost game object from within the list and reassigns it to the value of a local game object
@@ -85,7 +85,7 @@ public class GhostSpawner : MonoBehaviour
                 ghosts.Remove(ghost);
                 //Destroys the game object so that it no longer appears on screen or changes anything in the code
                 Destroy(ghost);
-                //A varible increments by 1 each time so that text in thr UI can display how many ghosts have been destroyed
+                //A varible increments by 1 so that text in the UI can display how many ghosts have been destroyed
                 howManyGhosts += 1;
                 //The audiosource of the Ghost Spawner is given an audio clip to play to show that the object has been destroyed
                 audioSource.clip = despawn;
@@ -103,7 +103,7 @@ public class GhostSpawner : MonoBehaviour
         {
             //Gives the script access to each ghosts sprite render so its colour can be changed when a button is pressed
             SpriteRenderer sr = ghosts[ii].GetComponent<SpriteRenderer>();
-
+            //Changes the colur value within each ghosts sprite renderer to a random value to change the colour of each ghost
             sr.color = Random.ColorHSV();
         }
     }

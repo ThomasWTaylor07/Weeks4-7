@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a63a0cfc8b5cbd643a31fad6652d3207
+guid: a83b6633413f2fd44bac8daa0068a76b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2176903300954069551
-    second: FlashlightBeam_0
+      213: -9010183353472309098
+    second: New Project - 2026-02-16T085309.472_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FlashlightBeam_0
+      name: New Project - 2026-02-16T085309.472_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2560
-        height: 1440
+        width: 19200
+        height: 10800
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2a1ebbb40ae53e10800000000000000
-      internalID: 2176903300954069551
+      spriteID: 698252f5af565f280800000000000000
+      internalID: -9010183353472309098
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FlashlightBeam_0: 2176903300954069551
+      New Project - 2026-02-16T085309.472_0: -9010183353472309098
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
