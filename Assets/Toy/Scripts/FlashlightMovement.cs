@@ -12,18 +12,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //Initializes and assigns a new Vector2 that can that can be used to change the value of the game objects transform
+       //Initializes and assigns a new Vector2 that can that can be used to change the value of the flashlights transform
         Vector2 newPos = transform.position;
-        //Converts the mouses position on screen to a Vector2 so the mouse can move the game object
+        //Converts the mouses position on screen to a Vector2 so the mouse can move the flashlight
         newPos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-        //Reassigns the objects positin to the value of the Vector2 to allow the mouses position to change the objects position
+        //Reassigns the flashlights positin to the value of the Vector2 to allow the mouses position to move the flashlight
         transform.position = newPos;
     }
 
   //Initializes a new function that features a float as an argument that gets accesed and changed by a slider in the UI
    public void LightScale(float scale)
     {
-   //Sets the objects scale to 1 multiplied by the sliders value, allowing for the game object to change its scale based on the slider
+   //Sets the objects scale to 1 multiplied by the sliders value, allowing for the flashlight to change its scale based on the slider
         transform.localScale = Vector3.one * scale;
 
     }

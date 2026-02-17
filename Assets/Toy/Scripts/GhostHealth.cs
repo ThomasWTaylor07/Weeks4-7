@@ -18,27 +18,27 @@ public class GhostHealth : MonoBehaviour
     {
         //Sets the sliders maximum value to the health variable so that the slider can be filled when the ghost is at full health
         healthbar.maxValue = health;
-        //Sets the sliders value to always be equal to the health variable so that the slider can update based on the ghosts health
+        //Sets the sliders value to always be equal to the health variable so that the slider can update based on the ghost's health
         healthbar.value = health;
-        //Initializes a Vector3 and assigns it to the objects rotation variable so that it can change the objects rotation
+        //Initializes a Vector3 and assigns it to the ghost's rotation variable so that it can change the ghost's rotation
         Vector3 newRotate = transform.eulerAngles;
-        //Sets the Z value of the Vector3 to a random number so that the ghosts rotation can be randomized each time it's used
+        //Sets the Z value of the Vector3 to a random number so that the ghost's rotation can be randomized each time it's used
         newRotate.z = Random.Range(1,360);
-     //Reassigns the ghosts rotation back to the value of the Vector3 so each time its instantiated, it gets a random rotation
+     //Reassigns the ghost's rotation back to the value of the Vector3 so each time its instantiated, it gets a random rotation
         transform.eulerAngles = newRotate;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Initializes a Vector2 and sets its value to the mosuses position so the code can check where the mouse is at all times
+        //Initializes a Vector2 and sets its value to the mosuse's position so the code can check where the mouse is at all times
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-       //Checks to see if the mouses position overlaps the bounding box in the sprite render to determine whether to lower its health
+     //Checks to see if the mouse's position overlaps the bounding box in the sprite render to determine whether to lower the ghost's health
         if (ghost.bounds.Contains(mousePos))
         {
             //If the mouse is within the bounding box, its health varible decreases by a small amount  
             health -= 0.01f;
-            //That value then gets inputeed back to the slider used for the health bar so it can relfect the ghosts current health
+            //That value then gets inputeed back into the slider used for the health bar so that it can relfect the ghost's current health
             healthbar.value = health;
         }
 

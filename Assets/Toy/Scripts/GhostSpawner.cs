@@ -17,13 +17,13 @@ public class GhostSpawner : MonoBehaviour
     public GhostHealth ghealth;
     //Creates a list of each ghost prefab in the scene so that ghosts can be destroyed and changed from within the script
     public List<GameObject> ghosts;
-    //Allows the script to get access to the ghost prefab as long as it is placed in the inspector so it can be instantiated
+    //Allows the script to get access to the ghost prefab so it can be instantiated
     public GameObject ghost;
     //Turns each ghost that is instatiated into a game object that can then be added to a list of instatiated game objects
     public GameObject spawnedGhosts;
     //Creates a public sprite rended varible that is used to get the sprite renderer of the ghost prefab from the inspector
     public SpriteRenderer sr;
-    //Initializes an integer that counts how many ghosts have been destroyed within the scene so it can be displayed in the UI
+    //Initializes an integer that counts how many ghosts have been destroyed within the scene so it can be displayed within the UI
     public int howManyGhosts;
     //Gets access to text within the UI so that it can be changed to show the value of the howManyGhosts integer
     public TextMeshProUGUI score;
@@ -33,7 +33,7 @@ public class GhostSpawner : MonoBehaviour
     public AudioClip spawn;
     //Gets an audio clip that's set in the inspector so it can be played by the audio source whenever a ghost is destroyed
     public AudioClip despawn;
-    //Gets access to a slider component from the UI that will create a timer to show the time until the next ghost is instantiated
+    //Gets access to a slider component from the UI that will be used to create a timer 
     public Slider timer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,14 +46,14 @@ public class GhostSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //Gives a textmesh object in the UI the value of the howManyGhosts varaible as a string so it can be shown on screen
+       //Gives a TextMesh object in the UI the value of the howManyGhosts varaible as a string so it can be shown on screen
         score.text = howManyGhosts.ToString();
-        //Increments the value of a timer by delta time so that it can count up unitil it reach the time limit
+        //Increments the value of the timer by Delta Time so that it can count up unitil it reaches the time limit
         timerValue += Time.deltaTime;
         //Checks if the value of the timer has exceeded the maximum value its allowed so that something can happen every 5 seconds
         if (timerValue > timerMax)
         {
-  //A vector2 is given random values that are used as the ghosts transform so that the ghosts are instantiated at a random spot
+  //A Vector2 is given random values that are used as the ghosts transform so that the ghosts are instantiated at a random spot
             Vector2 spawnPos = Random.insideUnitCircle * 4;
             //Instatiates a ghost prefab at a random position and turns it into a game object that gets added to a list 
             spawnedGhosts = Instantiate(ghost, spawnPos, Quaternion.identity);
@@ -71,7 +71,7 @@ public class GhostSpawner : MonoBehaviour
         }
         //Updates the value of the timer in the UI so that it accuratley shows the value of the timerValue variable each frame
         timer.value = timerValue;
-        //Grabs every ghost within the list so that it can check whether any of them have no health left
+        //This for loop grabs every ghost within the list so that it can check whether any of them have no health left
         for (int i = ghosts.Count - 1; i >= 0; i--)
         {
             //Gets each ghosts Ghost Health script so that the code can check whether an object has no health
