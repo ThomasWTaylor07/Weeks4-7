@@ -1,4 +1,5 @@
 using JetBrains.Annotations;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -9,6 +10,7 @@ public class ContactSensor : MonoBehaviour
     public UnityEvent OnEnteringSensor;
     public UnityEvent OnExitSensor;
     public UnityEvent<float> OnRandomNumber;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -37,15 +39,10 @@ public class ContactSensor : MonoBehaviour
                 Debug.Log("Exited The Sensor");
                 isInHazard = false;
                 OnExitSensor.Invoke();
-                OnRandomNumber.Invoke(Random.Range(5f, 8f));
+
             }
         }
-  
-    }
-    public void ShowNumber(float number)
-    {
-        Debug.Log(number);
-    
     }
 }
+
 
